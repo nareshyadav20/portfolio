@@ -51,7 +51,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="https://naresh-yadav.lovable.app/" target="_blank" rel="noreferrer" id="footer-old-portfolio">
+                <a href="https://portfolio-swart-five-6qy38zwrqn.vercel.app/" target="_blank" rel="noreferrer" id="footer-old-portfolio">
                   Old Portfolio
                 </a>
               </li>

@@ -56,8 +56,8 @@ const socialLinks = [
   {
     id: 'portfolio',
     name: 'Portfolio',
-    handle: 'naresh-yadav.lovable.app',
-    href: 'https://naresh-yadav.lovable.app/',
+    handle: 'portfolio-swart-five.vercel.app',
+    href: 'https://portfolio-swart-five-6qy38zwrqn.vercel.app/',
     color: '#9b59f0',
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22">
