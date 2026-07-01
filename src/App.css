@@ -1,0 +1,67 @@
+/* ===== APP ===== */
+.app {
+  position: relative;
+  min-height: 100vh;
+}
+
+/* ===== LOADER ===== */
+.loader-screen {
+  position: fixed;
+  inset: 0;
+  background: #050816;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease;
+}
+
+.loader-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.loader-ring {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid rgba(100, 149, 237, 0.1);
+  position: relative;
+  animation: spin-slow 1.5s linear infinite;
+}
+
+.loader-ring::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-top-color: var(--accent-blue);
+  border-right-color: var(--accent-purple);
+  animation: spin-slow 1.5s linear infinite;
+}
+
+.loader-ring-inner {
+  position: absolute;
+  inset: 8px;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+  opacity: 0.2;
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.loader-name {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.loader-tagline {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}

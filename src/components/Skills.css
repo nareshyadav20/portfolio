@@ -1,0 +1,161 @@
+.skills-section { position: relative; z-index: 1; }
+
+/* ===== LAYOUT ===== */
+.skills-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 24px;
+  margin-bottom: 60px;
+  align-items: start;
+}
+
+/* ===== TABS ===== */
+.skill-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.skill-tab {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 18px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: left;
+  font-family: var(--font-primary);
+}
+
+.skill-tab:hover {
+  background: var(--bg-card-hover);
+  color: var(--text-primary);
+}
+
+.tab-icon { font-size: 1.1rem; }
+
+/* ===== SKILL BARS ===== */
+.skill-bars-container {
+  padding: 32px;
+}
+
+.skill-bars-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.skill-bars-icon { font-size: 1.6rem; }
+
+.skill-bars-title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.skill-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.skill-bar-item {}
+
+.skill-bar-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.skill-bar-pct {
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.skill-bar-track {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.skill-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  animation: skillFill 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  transform-origin: left;
+}
+
+@keyframes skillFill {
+  from { width: 0 !important; }
+  to {}
+}
+
+/* ===== TECH STACK ===== */
+.tech-stack-section {
+  text-align: center;
+}
+
+.tech-stack-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.tech-stack-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.tech-chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 50px;
+  cursor: default;
+}
+
+.tech-chip-icon { font-size: 1rem; }
+
+.tech-chip-name {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .skills-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-tabs {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .skill-tab {
+    flex: 1;
+    min-width: 130px;
+    justify-content: center;
+    padding: 10px 14px;
+    font-size: 0.82rem;
+  }
+}
