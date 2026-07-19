@@ -17,33 +17,111 @@
   width: 100%;
 }
 
-.streak-card {
-  grid-column: 1 / -1;
-  display: flex;
-  justify-content: center;
-}
-
 .github-card {
-  padding: 16px;
+  padding: 30px;
   border-radius: var(--radius-lg);
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
   transition: var(--transition);
-  background: var(--bg-card);
-  backdrop-filter: blur(10px);
 }
 
 .github-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-hover);
-  border-color: var(--border-glow);
 }
 
-.github-stat-image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
+.github-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: var(--text-primary);
+}
+
+/* Base Top Langs Card */
+.lang-progress-bar {
+  display: flex;
+  height: 12px;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 24px;
+  background-color: var(--bg-secondary);
+}
+
+.lang-segment {
+  height: 100%;
+  transition: width 1s ease-in-out;
+}
+
+.lang-legend {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  list-style: none;
+}
+
+.lang-legend li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+.lang-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.lang-name {
+  font-weight: 500;
+  flex-grow: 1;
+}
+
+.lang-pct {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Base Stats Overview Card */
+.stats-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.stat-overview-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.stat-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  flex-shrink: 0;
+}
+
+.stat-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-value {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 500;
 }
 
 .github-actions {
