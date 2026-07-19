@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion'
+import { Building2, Calendar, MapPin, Briefcase } from 'lucide-react'
 import './Experience.css'
 
 const experiences = [
@@ -9,7 +11,7 @@ const experiences = [
     location: 'Hyderabad, Telangana (On-site)',
     type: 'Internship',
     color: '#6495ed',
-    icon: '🤖',
+    icon: <Briefcase size={20} />,
     bullets: [
       'Developed AI-powered chatbot applications using Survam AI models (Survam, Bulbul, Anushka) for customer interaction and business automation.',
       'Integrated Large Language Models (LLMs) via Ollama for local AI inference, improving response accuracy and reducing latency.',
@@ -20,6 +22,23 @@ const experiences = [
     ],
     tech: ['Python', 'Ollama', 'LLMs', 'NLP', 'AI Chatbots', 'REST APIs', 'MongoDB', 'Node.js', 'Express.js', 'React.js'],
   },
+  {
+    id: 'oasis',
+    role: 'Full Stack Development Intern',
+    company: 'OASIS INFOBYTE (AICTE OIB-SIP)',
+    period: 'Nov 2024 – Jan 2025',
+    location: 'Remote',
+    type: 'Internship',
+    color: '#34d399',
+    icon: <Briefcase size={20} />,
+    bullets: [
+      'Developed full-stack web applications focusing on responsive UI designs and robust backend APIs.',
+      'Collaborated effectively in an agile environment to design, test, and deploy functional modules.',
+      'Resolved bugs and optimized application performance, enhancing user experience across devices.',
+      'Participated in code reviews and adopted best practices for version control using Git and GitHub.',
+    ],
+    tech: ['HTML5', 'CSS3', 'JavaScript', 'React.js', 'Node.js', 'Express.js', 'MongoDB', 'Git'],
+  },
 ]
 
 export default function Experience() {
@@ -27,19 +46,26 @@ export default function Experience() {
     <section className="section experience-section" id="experience">
       <div className="container">
         <div className="section-header">
-          <div className="section-badge">Experience</div>
-          <h2 className="section-title">
+          <div className="section-badge fade-in-up">Experience</div>
+          <h2 className="section-title fade-in-up">
             Professional <span className="gradient-text">Journey</span>
           </h2>
-          <p className="section-subtitle">Building real-world AI solutions and scalable systems</p>
+          <p className="section-subtitle fade-in-up">Building real-world AI solutions and scalable systems</p>
         </div>
 
         <div className="timeline">
-          {experiences.map((exp) => (
-            <div className="timeline-item" key={exp.id} id={`exp-${exp.id}`}>
+          {experiences.map((exp, index) => (
+            <motion.div 
+              className="timeline-item" 
+              key={exp.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+            >
               <div className="timeline-connector">
                 <div className="timeline-dot" style={{ background: exp.color, boxShadow: `0 0 20px ${exp.color}60` }}>
-                  <span>{exp.icon}</span>
+                  {exp.icon}
                 </div>
                 <div className="timeline-line"></div>
               </div>
@@ -52,17 +78,17 @@ export default function Experience() {
                     </div>
                     <h3 className="exp-role">{exp.role}</h3>
                     <div className="exp-company">
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/></svg>
+                      <Building2 size={14} />
                       {exp.company}
                     </div>
                   </div>
                   <div className="exp-header-right">
                     <div className="exp-period">
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+                      <Calendar size={12} />
                       {exp.period}
                     </div>
                     <div className="exp-location">
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                      <MapPin size={12} />
                       {exp.location}
                     </div>
                   </div>
@@ -83,7 +109,7 @@ export default function Experience() {
                   ))}
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

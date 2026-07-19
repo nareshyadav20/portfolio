@@ -1,0 +1,58 @@
+.github-section {
+  position: relative;
+  z-index: 1;
+}
+
+.github-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+}
+
+.github-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  width: 100%;
+}
+
+.streak-card {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+}
+
+.github-card {
+  padding: 16px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: var(--transition);
+  background: var(--bg-card);
+  backdrop-filter: blur(10px);
+}
+
+.github-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--border-glow);
+}
+
+.github-stat-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.github-actions {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .github-stats-grid {
+    grid-template-columns: 1fr;
+  }
+}

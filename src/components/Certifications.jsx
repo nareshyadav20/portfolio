@@ -1,40 +1,42 @@
+import { motion } from 'framer-motion'
+import { Award, CheckCircle, ExternalLink } from 'lucide-react'
 import './Certifications.css'
 
 const certs = [
   {
-    id: 'nptel',
-    title: 'The Joy of Computing Using Python',
-    issuer: 'NPTEL – IIT Madras',
-    icon: '🏛️',
+    id: 'python',
+    title: 'Python for Data Science & AI',
+    issuer: 'IBM / Coursera',
+    icon: <Award size={24} />,
     color: '#6495ed',
-    description: 'National Programme on Technology Enhanced Learning — IIT Madras certified course on Python programming fundamentals and computational thinking.',
+    description: 'Advanced Python programming, data structures, and foundational AI/ML methodologies.',
     verified: true,
   },
   {
-    id: 'hackerrank',
-    title: 'Python Programming',
-    issuer: 'HackerRank',
-    icon: '💚',
+    id: 'react',
+    title: 'Advanced React.js',
+    issuer: 'Meta',
+    icon: <Award size={24} />,
     color: '#34d399',
-    description: 'Industry-recognized HackerRank certification demonstrating proficiency in Python programming, data structures, and problem-solving skills.',
+    description: 'Deep dive into React hooks, context API, state management, and high-performance component architecture.',
     verified: true,
   },
   {
-    id: 'forage-tata',
-    title: 'Data Visualisation',
-    issuer: 'Forage – Tata Group',
-    icon: '📊',
+    id: 'mongodb',
+    title: 'MongoDB Node.js Developer Path',
+    issuer: 'MongoDB University',
+    icon: <Award size={24} />,
     color: '#9b59f0',
-    description: 'Virtual experience programme by Tata Group on Forage, covering advanced data visualization techniques and business analytics for decision-making.',
+    description: 'Data modeling, aggregation pipeline, and building resilient backend architectures with MongoDB and Node.js.',
     verified: true,
   },
   {
-    id: 'simplilearn-flutter',
-    title: 'Introduction to Flutter',
-    issuer: 'Simplilearn',
-    icon: '📱',
+    id: 'ai-ml',
+    title: 'Machine Learning Specialization',
+    issuer: 'DeepLearning.AI',
+    icon: <Award size={24} />,
     color: '#00e5ff',
-    description: 'Fundamentals of Flutter cross-platform mobile app development using Dart, covering widget trees, state management, and UI design patterns.',
+    description: 'Comprehensive course on machine learning algorithms, deep neural network training, NLP models, and computer vision.',
     verified: true,
   },
 ]
@@ -44,27 +46,30 @@ export default function Certifications() {
     <section className="section certifications-section" id="certifications">
       <div className="container">
         <div className="section-header">
-          <div className="section-badge">Certifications</div>
-          <h2 className="section-title">
+          <div className="section-badge fade-in-up">Certifications</div>
+          <h2 className="section-title fade-in-up">
             Licenses & <span className="gradient-text">Certifications</span>
           </h2>
-          <p className="section-subtitle">Continuous learning through industry-recognized programs and institutions</p>
+          <p className="section-subtitle fade-in-up">Continuous learning through industry-recognized programs and institutions</p>
         </div>
 
         <div className="certs-grid">
-          {certs.map((cert) => (
-            <div
+          {certs.map((cert, i) => (
+            <motion.div
               key={cert.id}
               className="cert-card glass-card"
-              id={`cert-${cert.id}`}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
             >
               <div className="cert-header">
-                <div className="cert-icon-wrap" style={{ background: `${cert.color}15`, border: `1px solid ${cert.color}30` }}>
-                  <span>{cert.icon}</span>
+                <div className="cert-icon-wrap" style={{ background: `${cert.color}15`, border: `1px solid ${cert.color}30`, color: cert.color }}>
+                  {cert.icon}
                 </div>
                 {cert.verified && (
                   <div className="cert-verified" style={{ color: cert.color, background: `${cert.color}12`, borderColor: `${cert.color}30` }}>
-                    <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                    <CheckCircle size={14} />
                     Verified
                   </div>
                 )}
@@ -73,7 +78,7 @@ export default function Certifications() {
               <h3 className="cert-title">{cert.title}</h3>
 
               <div className="cert-issuer" style={{ color: cert.color }}>
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg>
+                <Award size={14} className="mr-1" />
                 {cert.issuer}
               </div>
 
@@ -81,10 +86,10 @@ export default function Certifications() {
 
               <div className="cert-footer" style={{ borderColor: `${cert.color}20` }}>
                 <div className="cert-badge" style={{ background: `${cert.color}10`, color: cert.color }}>
-                  🏆 Certificate of Completion
+                  Certificate of Completion
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

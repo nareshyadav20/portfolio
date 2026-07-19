@@ -14,11 +14,11 @@ export default function Footer() {
         <div className="footer-top">
           <div className="footer-brand">
             <a href="#hero" className="footer-logo" id="footer-logo">
-              <span className="gradient-text">PN</span>
+              <span className="gradient-text">NY</span>
               <span className="footer-logo-dot"></span>
             </a>
             <p className="footer-tagline">
-              AI/ML Developer · Python Expert · MERN Stack Engineer
+              Full Stack MERN Developer · AI Specialist
             </p>
             <p className="footer-description">
               Building intelligent, scalable systems for real-world business automation.
@@ -29,7 +29,7 @@ export default function Footer() {
           <div className="footer-links-col">
             <h4>Navigation</h4>
             <ul>
-              {['About', 'Experience', 'Projects', 'Skills', 'Education', 'Contact'].map(link => (
+              {['About', 'Experience', 'Projects', 'Skills', 'Education', 'GitHub', 'Contact'].map(link => (
                 <li key={link}>
                   <a href={`#${link.toLowerCase()}`} id={`footer-nav-${link.toLowerCase()}`}>{link}</a>
                 </li>
@@ -46,13 +46,8 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="https://linkedin.com/in/naresh-yadav-/" target="_blank" rel="noreferrer" id="footer-linkedin">
+                <a href="https://linkedin.com/in/naresh-yadav-panga" target="_blank" rel="noreferrer" id="footer-linkedin">
                   LinkedIn
-                </a>
-              </li>
-              <li>
-                <a href="https://portfolio-swart-five-6qy38zwrqn.vercel.app/" target="_blank" rel="noreferrer" id="footer-old-portfolio">
-                  Old Portfolio
                 </a>
               </li>
               <li>
@@ -73,10 +68,10 @@ export default function Footer() {
 
         <div className="footer-bottom">
           <p className="footer-copy">
-            © {currentYear} <span className="gradient-text">Panga Naresh</span>. All rights reserved.
+            © {currentYear} <span className="gradient-text">Naresh Yadav</span>. All rights reserved.
           </p>
           <p className="footer-made">
-            Crafted with ❤️ using <span className="gradient-text">React + Vite</span>
+            Built with ❤️ using React, Tailwind CSS, and Framer Motion.
           </p>
           <button
             className="scroll-top-btn"

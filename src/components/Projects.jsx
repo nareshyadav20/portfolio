@@ -1,85 +1,98 @@
 import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { ExternalLink, Activity, ArrowRight, User } from 'lucide-react'
+
+const Github = ({ size = 24 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+  </svg>
+)
 import './Projects.css'
 
 const projects = [
   {
-    id: 'livora',
-    title: 'Livora Hostel Hub',
-    subtitle: 'Full-Stack Hostel Management System',
-    description: 'A comprehensive hostel management platform with separate Owner, Tenant, and Admin portals, featuring role-based access control, real-time occupancy tracking, and complete digitization of hostel workflows.',
-    icon: '🏠',
-    color: '#6495ed',
-    gradient: 'linear-gradient(135deg, #6495ed22, #9b59f022)',
-    links: [
-      { label: 'Tenant Portal', href: 'https://livora-hostel-hub-tenant.vercel.app', icon: '🔗' },
-      { label: 'Owner Portal', href: 'https://hostel-hub-owner.vercel.app', icon: '🔗' },
-      { label: 'Admin Portal', href: 'https://livora-hostel-hub-admin.vercel.app/', icon: '🔗' },
+    id: 'familyhub',
+    featured: true,
+    title: 'FamilyHub OS',
+    subtitle: 'Full Stack SaaS Family Management Platform',
+    image: '/family_hub_os_dashboard_1784445041244.png',
+    description: 'A secure, role-based multi-tenant SaaS platform designed to help families manage members, events, documents, groups, and communication in one centralized digital ecosystem.',
+    problem: 'Families struggled managing multiple apps for events, sharing documents securely, and tracking shared expenses or communication.',
+    solution: 'Built a centralized multi-tenant dashboard isolating family spaces with RBAC, realtime updates, and integrated Google calendar features.',
+    features: [
+      'Role-Based Access Control (Super Admin, Admin, Member)',
+      'Multi-Tenant Architecture with family-wise data isolation',
+      'Super Admin, Admin & Member Portals',
+      'Google Calendar API & Real-time email notifications',
     ],
-    bullets: [
-      'Built separate Owner, Tenant, and Admin portals with role-based access control (JWT Authentication)',
-      'Implemented modules for building, floor, room, and bed management; tenant profile management',
-      'Booking & occupancy tracking with real-time dashboard analytics',
-      'Designed responsive React.js interfaces with secure Node.js/Express.js REST APIs',
-      'Deployed on Vercel, digitizing manual hostel workflows and improving operational efficiency',
-    ],
-    tech: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'JWT', 'Vercel'],
+    tech: ['React.js', 'Vite', 'Tailwind', 'Node.js', 'Express', 'PostgreSQL', 'Prisma', 'JWT', 'Socket.IO'],
+    architecture: 'Micro-services inspired REST API with containerized PostgreSQL and realtime websocket signaling.',
+    myContribution: 'Designed and implemented the full-stack architecture, built Super Admin/Admin/Member portals, integrated Google Calendar, realtime emails, and deployed on Vercel and Render.',
+    links: {
+      live: 'https://family-hub-seven-ecru.vercel.app/',
+      admin: 'https://family-hub-superadmin.vercel.app/',
+      github: 'https://github.com/nareshyadav20/family_hub.git'
+    },
     category: 'Full Stack',
+    color: '#6495ed'
+  },
+  {
+    id: 'livora',
+    featured: false,
+    title: 'Livora Hostel Hub',
+    subtitle: 'Hostel Management System',
+    image: '/livora_hostel_hub_1784445062409.png',
+    description: 'A comprehensive platform with separate Owner, Tenant, and Admin portals, featuring role-based access control, real-time occupancy tracking, and digitized workflows.',
+    features: [
+      'Separate portals for students and admins',
+      'Booking, payments logic',
+      'Real-time occupancy dashboard'
+    ],
+    tech: ['MongoDB', 'Express', 'React', 'Node.js', 'Vercel'],
+    links: { 
+      live: 'https://livora-hostel-hub-tenant.vercel.app', 
+      github: 'https://github.com/nareshyadav20'
+    },
+    category: 'Full Stack',
+    color: '#34d399'
   },
   {
     id: 'spam-detection',
+    featured: false,
     title: 'Spam Review Detection',
-    subtitle: 'ML NLP Project',
-    description: 'Machine learning model to detect fake and spam reviews from e-commerce platforms using advanced NLP feature extraction techniques.',
-    icon: '🔍',
-    color: '#9b59f0',
-    gradient: 'linear-gradient(135deg, #9b59f022, #f472b622)',
-    links: [],
-    bullets: [
-      'Built ML model to detect fake/spam reviews using TF-IDF and Word2Vec feature extraction',
-      'Performed text preprocessing including tokenization and stop-word removal',
-      'Evaluated model accuracy, precision, recall, and F1 metrics',
-      'Compared multiple classifiers to identify optimal performance',
+    subtitle: 'AI/NLP ML Project',
+    image: '/spam_detection_1784445083716.png',
+    description: 'Machine learning model utilizing BERT and NLP techniques to detect fake and spam reviews from e-commerce platforms with high accuracy.',
+    features: [
+      'TF-IDF & Word2Vec extraction',
+      'Detailed confusion matrices',
+      'High F1 score on e-commerce dataset'
     ],
-    tech: ['Python', 'Scikit-Learn', 'NLP', 'TF-IDF', 'Word2Vec', 'SQL'],
+    tech: ['Python', 'BERT', 'NLP', 'Scikit-Learn'],
+    links: { live: '', github: 'https://github.com/nareshyadav20' },
     category: 'AI/ML',
-  },
-  {
-    id: 'bus-pass',
-    title: 'Smart Bus Pass System',
-    subtitle: 'Web Application',
-    description: 'A full-stack web application to digitize the bus pass process, replacing physical cards with a secure digital solution and streamlining the entire pass lifecycle.',
-    icon: '🚌',
-    color: '#34d399',
-    gradient: 'linear-gradient(135deg, #34d39922, #00e5ff22)',
-    links: [],
-    bullets: [
-      'Developed full-stack web app to digitize the bus pass process',
-      'Replaced physical cards with secure digital solution',
-      'Implemented secure authentication and role management for students and administrators',
-      'Streamlined the complete pass issuance and renewal workflow',
-    ],
-    tech: ['HTML', 'CSS', 'JavaScript', 'Python', 'SQL'],
-    category: 'Web App',
-  },
+    color: '#9b59f0'
+  }
 ]
 
 const categories = ['All', 'Full Stack', 'AI/ML', 'Web App']
 
 export default function Projects() {
   const [filter, setFilter] = useState('All')
-  const [hovered, setHovered] = useState(null)
-
+  
   const filtered = filter === 'All' ? projects : projects.filter(p => p.category === filter)
+  const featured = filtered.filter(p => p.featured)
+  const others = filtered.filter(p => !p.featured)
 
   return (
     <section className="section projects-section" id="projects">
       <div className="container">
         <div className="section-header">
-          <div className="section-badge">Projects</div>
-          <h2 className="section-title">
-            Things I've <span className="gradient-text">Built</span>
+          <div className="section-badge fade-in-up">Portfolio</div>
+          <h2 className="section-title fade-in-up">
+            Featured <span className="gradient-text">Engineering Work</span>
           </h2>
-          <p className="section-subtitle">A showcase of real-world applications across AI/ML, Full Stack, and Web Development</p>
+          <p className="section-subtitle fade-in-up">A showcase of real-world scalable applications, APIs, and ML models</p>
         </div>
 
         <div className="project-filters">
@@ -88,7 +101,6 @@ export default function Projects() {
               key={cat}
               className={`filter-btn ${filter === cat ? 'active' : ''}`}
               onClick={() => setFilter(cat)}
-              id={`filter-${cat.toLowerCase().replace(/\s+/g, '-')}`}
             >
               {cat}
             </button>
@@ -96,63 +108,117 @@ export default function Projects() {
         </div>
 
         <div className="projects-grid">
-          {filtered.map((project) => (
-            <div
-              key={project.id}
-              className={`project-card glass-card ${hovered === project.id ? 'hovered' : ''}`}
-              onMouseEnter={() => setHovered(project.id)}
-              onMouseLeave={() => setHovered(null)}
-              id={`project-${project.id}`}
-              style={{ background: hovered === project.id ? project.gradient : undefined }}
-            >
-              <div className="project-top">
-                <div className="project-icon" style={{ background: `${project.color}18`, border: `1px solid ${project.color}30` }}>
-                  <span>{project.icon}</span>
-                </div>
-                <div className="project-links">
-                  {project.links.map((link, i) => (
-                    <a
-                      key={i}
-                      href={link.href}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="project-link-btn"
-                      style={{ borderColor: `${project.color}40`, color: project.color }}
-                      id={`project-${project.id}-link-${i}`}
-                    >
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
-                      {link.label}
-                    </a>
-                  ))}
-                </div>
-              </div>
+          {/* Featured Projects */}
+          <div className="featured-projects">
+            <AnimatePresence>
+              {featured.map((project, i) => (
+                <motion.div 
+                  key={project.id}
+                  className="featured-project-card glass-card"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                >
+                  <div className="fp-image-container">
+                    <div className="fp-overlay"></div>
+                    <img src={project.image} alt={project.title} className="fp-image" />
+                    <div className="fp-links">
+                      {project.links.github && (
+                        <a href={project.links.github} target="_blank" rel="noreferrer" className="fp-icon-btn">
+                          <Github size={24} />
+                        </a>
+                      )}
+                      {project.links.live && (
+                        <a href={project.links.live} target="_blank" rel="noreferrer" className="fp-icon-btn">
+                          <ExternalLink size={24} />
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                  <div className="fp-content">
+                    <div className="fp-badge" style={{ color: project.color, background: `${project.color}15`, borderColor: `${project.color}40` }}>
+                      Featured Project
+                    </div>
+                    <h3 className="fp-title">{project.title}</h3>
+                    <h4 className="fp-subtitle">{project.subtitle}</h4>
+                    
+                    <div className="fp-description-box">
+                      <p>{project.description}</p>
+                    </div>
+                    
+                    <div className="fp-details">
+                      <div className="fp-detail-group">
+                        <h5><Activity size={16} color="var(--accent-blue)" /> Key Features</h5>
+                        <ul>
+                          {project.features.map((f, idx) => <li key={idx}>- {f}</li>)}
+                        </ul>
+                      </div>
+                      <div className="fp-detail-group">
+                        <h5><User size={16} color="var(--accent-purple)" /> My Contribution</h5>
+                        <p>{project.myContribution}</p>
+                      </div>
+                    </div>
 
-              <div className="project-category-tag" style={{ color: project.color, background: `${project.color}12`, borderColor: `${project.color}30` }}>
-                {project.category}
-              </div>
+                    <div className="fp-tech">
+                      {project.tech.map((t, idx) => (
+                        <span key={idx} className="tech-pill">{t}</span>
+                      ))}
+                    </div>
 
-              <h3 className="project-title">{project.title}</h3>
-              <p className="project-subtitle">{project.subtitle}</p>
-              <p className="project-description">{project.description}</p>
+                    <div className="fp-actions">
+                      {project.links.live && (
+                        <a href={project.links.live} target="_blank" rel="noreferrer" className="btn-primary">
+                          Main Portal <ArrowRight size={16} />
+                        </a>
+                      )}
+                      {project.links.admin && (
+                        <a href={project.links.admin} target="_blank" rel="noreferrer" className="btn-outline">
+                          Super Admin Portal
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </div>
 
-              <ul className="project-bullets">
-                {project.bullets.map((b, i) => (
-                  <li key={i}>
-                    <span className="bullet-arrow" style={{ color: project.color }}>▸</span>
-                    {b}
-                  </li>
-                ))}
-              </ul>
+          {/* Other Projects Grid */}
+          <div className="other-projects-grid">
+            <AnimatePresence>
+              {others.map((project, i) => (
+                <motion.div 
+                  key={project.id}
+                  className="other-project-card glass-card"
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  transition={{ duration: 0.4, delay: i * 0.05 }}
+                  whileHover={{ y: -5 }}
+                >
+                  <div className="op-image-container">
+                    <img src={project.image} alt={project.title} className="op-image" />
+                    <div className="op-links">
+                      {project.links.github && <a href={project.links.github} target="_blank" rel="noreferrer"><Github size={18} /></a>}
+                      {project.links.live && <a href={project.links.live} target="_blank" rel="noreferrer"><ExternalLink size={18} /></a>}
+                    </div>
+                  </div>
+                  <div className="op-content">
+                    <h3>{project.title}</h3>
+                    <p className="op-desc">{project.description}</p>
+                    <div className="op-tech">
+                      {project.tech.slice(0,4).map((t, idx) => (
+                        <span key={idx} className="tech-pill-small">{t}</span>
+                      ))}
+                      {project.tech.length > 4 && <span className="tech-pill-small">+{project.tech.length - 4}</span>}
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </div>
 
-              <div className="project-tech">
-                {project.tech.map((t, i) => (
-                  <span key={i} className="project-tech-tag" style={{ borderColor: `${project.color}30`, color: project.color, background: `${project.color}08` }}>
-                    {t}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
         </div>
       </div>
     </section>
