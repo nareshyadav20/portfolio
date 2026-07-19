@@ -29,7 +29,7 @@
   margin-bottom: 48px;
 }
 
-.footer-brand {}
+
 
 .footer-logo {
   display: inline-flex;
@@ -41,6 +41,12 @@
   text-decoration: none;
   margin-bottom: 12px;
   letter-spacing: -1px;
+}
+.footer-logo .gradient-text {
+  background: linear-gradient(135deg, #10b981 0%, #00e5ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .footer-logo-dot {

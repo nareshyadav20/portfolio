@@ -29,7 +29,7 @@ export default function Footer() {
           <div className="footer-links-col">
             <h4>Navigation</h4>
             <ul>
-              {['About', 'Experience', 'Projects', 'Skills', 'Education', 'GitHub', 'Contact'].map(link => (
+              {['About', 'Experience', 'Projects', 'Skills', 'Education', 'Contact'].map(link => (
                 <li key={link}>
                   <a href={`#${link.toLowerCase()}`} id={`footer-nav-${link.toLowerCase()}`}>{link}</a>
                 </li>
