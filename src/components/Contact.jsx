@@ -55,18 +55,18 @@ export default function Contact() {
             </div>
 
             <div className="contact-social-grid">
-              <a href="https://linkedin.com/in/naresh-yadav-panga" target="_blank" rel="noreferrer" className="contact-social-btn">
+              <a href="https://www.linkedin.com/in/naresh-yadav-/" target="_blank" rel="noopener noreferrer" className="contact-social-btn">
                 <Linkedin size={20} />
                 <span>LinkedIn</span>
               </a>
-              <a href="https://github.com/nareshyadav20" target="_blank" rel="noreferrer" className="contact-social-btn">
+              <a href="https://github.com/nareshyadav20" target="_blank" rel="noopener noreferrer" className="contact-social-btn">
                 <Github size={20} />
                 <span>GitHub</span>
               </a>
             </div>
 
             <div className="resume-download-wrapper">
-              <a href="https://docs.google.com/document/d/1P3p2vob5N3YZKAMxI67dW5CucgfgjV52/edit?usp=sharing&ouid=109640405793276953041&rtpof=true&sd=true" target="_blank" rel="noreferrer" className="btn-primary ds-btn-full">
+              <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" download="Panga_Naresh_Resume.pdf" className="btn-primary ds-btn-full">
                 <Download size={18} />
                 Download Resume
               </a>

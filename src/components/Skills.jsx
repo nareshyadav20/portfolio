@@ -4,40 +4,40 @@ import './Skills.css'
 
 const categories = [
   {
-    title: 'Frontend',
-    icon: <Monitor size={24} />,
-    color: '#6495ed',
-    skills: ['React.js', 'Next.js', 'JavaScript', 'TypeScript', 'Tailwind CSS', 'Redux', 'Material UI']
-  },
-  {
-    title: 'Backend',
-    icon: <Server size={24} />,
+    title: 'Programming & Python',
+    icon: <Brain size={24} />,
     color: '#34d399',
-    skills: ['Node.js', 'Express.js', 'REST APIs', 'JWT Authentication', 'Socket.IO']
+    skills: ['Python', 'JavaScript', 'SQL', 'R', 'OOP', 'Data Structures']
   },
   {
-    title: 'Database',
-    icon: <DBIcon size={24} />,
-    color: '#f472b6',
-    skills: ['MongoDB', 'PostgreSQL', 'Prisma ORM', 'Supabase']
+    title: 'Full Stack & Backend',
+    icon: <Server size={24} />,
+    color: '#6495ed',
+    skills: ['React.js', 'Node.js', 'Express.js', 'REST APIs', 'JWT Auth', 'Socket.IO', 'Tailwind CSS']
   },
   {
-    title: 'Cloud & DevOps',
+    title: 'AI, ML & NLP',
+    icon: <Monitor size={24} />,
+    color: '#9b59f0',
+    skills: ['Machine Learning', 'NLP', 'Scikit-Learn', 'Pandas', 'NumPy', 'TF-IDF', 'Word2Vec']
+  },
+  {
+    title: 'Generative AI & LLMs',
     icon: <Cloud size={24} />,
     color: '#00e5ff',
-    skills: ['Vercel', 'Render', 'GitHub Actions', 'Cloudinary']
+    skills: ['LLMs', 'Ollama', 'AI Chatbots', 'Sarvam AI', 'Voice AI Agents', 'AI Automation']
   },
   {
-    title: 'AI & Data Science',
-    icon: <Brain size={24} />,
-    color: '#9b59f0',
-    skills: ['Python', 'OpenAI APIs', 'HuggingFace', 'BERT', 'NLP']
+    title: 'Databases',
+    icon: <DBIcon size={24} />,
+    color: '#f472b6',
+    skills: ['MongoDB', 'MySQL', 'PostgreSQL', 'Prisma ORM']
   },
   {
-    title: 'Tools',
+    title: 'Tools & Analytics',
     icon: <Wrench size={24} />,
     color: '#f59e0b',
-    skills: ['Git', 'GitHub', 'Postman', 'VS Code', 'Figma']
+    skills: ['Git', 'GitHub', 'Postman', 'VS Code', 'Jupyter Notebook', 'Vercel', 'Power BI']
   }
 ]
 

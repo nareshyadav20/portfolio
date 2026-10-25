@@ -44,7 +44,7 @@ function App() {
           <div className="loader-name">
             <span className="gradient-text">Naresh Yadav</span>
           </div>
-          <div className="loader-tagline">Full Stack MERN Developer</div>
+          <div className="loader-tagline">Junior Software Engineer · Full-Stack & Python Developer · AI/ML</div>
         </div>
       </div>
     )
@@ -53,11 +53,11 @@ function App() {
   return (
     <div className="app noise-bg">
       <Helmet>
-        <title>Naresh Yadav | Full Stack MERN Developer & AI Integration Specialist</title>
-        <meta name="description" content="Portfolio of Naresh Yadav, a Full Stack MERN Developer specializing in scalable web apps, real-time architectures, AI solutions, and seamless user experiences." />
-        <meta name="keywords" content="Naresh Yadav, Full Stack Developer, MERN Stack, React.js, Node.js, AI Integration, Web Development, Portfolio" />
-        <meta property="og:title" content="Naresh Yadav | Full Stack MERN Developer" />
-        <meta property="og:description" content="Portfolio of Naresh Yadav, a Full Stack MERN Developer specializing in scalable web apps, real-time architectures, and AI solutions." />
+        <title>Panga Naresh | Junior Software Engineer | Full-Stack & Python Developer | AI/ML</title>
+        <meta name="description" content="Portfolio of Panga Naresh — Junior Software Engineer at VillagKart Private Limited, Full-Stack MERN Developer, Python Developer, and AI/ML Specialist." />
+        <meta name="keywords" content="Panga Naresh, Junior Software Engineer, VillagKart, Full Stack Developer, Python Developer, MERN Stack, React.js, Node.js, AI/ML, Portfolio" />
+        <meta property="og:title" content="Panga Naresh | Junior Software Engineer & Full-Stack Developer" />
+        <meta property="og:description" content="Portfolio of Panga Naresh — Junior Software Engineer at VillagKart Private Limited, Full-Stack MERN Developer, Python Developer, and AI/ML Specialist." />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <html lang="en" />

@@ -18,10 +18,10 @@ export default function Footer() {
               <span className="footer-logo-dot"></span>
             </a>
             <p className="footer-tagline">
-              Full Stack MERN Developer · AI Specialist
+              Junior Software Engineer · Full-Stack & Python Developer · AI/ML
             </p>
             <p className="footer-description">
-              Building intelligent, scalable systems for real-world business automation.
+              Junior Software Engineer at VillagKart Private Limited. Building intelligent, scalable systems and full-stack solutions.
               Based in Hyderabad, Telangana.
             </p>
           </div>
@@ -41,12 +41,12 @@ export default function Footer() {
             <h4>Connect</h4>
             <ul>
               <li>
-                <a href="https://github.com/nareshyadav20" target="_blank" rel="noreferrer" id="footer-github">
+                <a href="https://github.com/nareshyadav20" target="_blank" rel="noopener noreferrer" id="footer-github">
                   GitHub
                 </a>
               </li>
               <li>
-                <a href="https://linkedin.com/in/naresh-yadav-panga" target="_blank" rel="noreferrer" id="footer-linkedin">
+                <a href="https://www.linkedin.com/in/naresh-yadav-/" target="_blank" rel="noopener noreferrer" id="footer-linkedin">
                   LinkedIn
                 </a>
               </li>

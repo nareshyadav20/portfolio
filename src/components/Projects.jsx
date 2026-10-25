@@ -42,15 +42,16 @@ const projects = [
     title: 'Livora Hostel Hub',
     subtitle: 'Hostel Management System',
     image: '/livora_hostel_hub_1784445062409.png',
-    description: 'A comprehensive platform with separate Owner, Tenant, and Admin portals, featuring role-based access control, real-time occupancy tracking, and digitized workflows.',
+    description: 'A full-stack hostel management platform with Owner/Tenant portals, JWT-based role-based access control, and React.js/Node.js/Express.js REST APIs backed by MongoDB.',
     features: [
-      'Separate portals for students and admins',
-      'Booking, payments logic',
-      'Real-time occupancy dashboard'
+      'Owner & Tenant separate portals',
+      'JWT-based role-based access control',
+      'Booking, payments and occupancy workflows'
     ],
-    tech: ['MongoDB', 'Express', 'React', 'Node.js', 'Vercel'],
+    tech: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'JWT', 'Vercel'],
     links: { 
-      live: 'https://livora-hostel-hub-tenant.vercel.app', 
+      live: 'https://livora-hostel-hub-tenant.vercel.app/', 
+      admin: 'https://livora-hostel-hub-admin.vercel.app/',
       github: 'https://github.com/nareshyadav20'
     },
     category: 'Full Stack',
@@ -60,15 +61,15 @@ const projects = [
     id: 'spam-detection',
     featured: false,
     title: 'Spam Review Detection',
-    subtitle: 'AI/NLP ML Project',
+    subtitle: 'Machine Learning / NLP Project',
     image: '/spam_detection_1784445083716.png',
-    description: 'Machine learning model utilizing BERT and NLP techniques to detect fake and spam reviews from e-commerce platforms with high accuracy.',
+    description: 'Built a machine learning model in Python to detect spam/fake e-commerce reviews using TF-IDF and Word2Vec feature extraction, text preprocessing, and accuracy evaluation.',
     features: [
-      'TF-IDF & Word2Vec extraction',
-      'Detailed confusion matrices',
-      'High F1 score on e-commerce dataset'
+      'TF-IDF & Word2Vec feature extraction',
+      'Tokenization & stop-word removal preprocessing',
+      'Accuracy and precision metrics evaluation'
     ],
-    tech: ['Python', 'BERT', 'NLP', 'Scikit-Learn'],
+    tech: ['Python', 'Scikit-Learn', 'NLP', 'SQL', 'Word2Vec', 'TF-IDF'],
     links: { live: '', github: 'https://github.com/nareshyadav20' },
     category: 'AI/ML',
     color: '#9b59f0'

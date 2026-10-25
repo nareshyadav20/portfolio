@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Download, Mail, ExternalLink } from 'lucide-react'
 import './Hero.css'
@@ -16,13 +17,49 @@ const Linkedin = ({ size = 24 }) => (
   </svg>
 )
 
+const roles = [
+  'Junior Software Engineer',
+  'Full-Stack (MERN) Developer',
+  'Python Developer',
+  'AI / ML Specialist',
+]
+
 export default function Hero() {
+  const [currentRoleIndex, setCurrentRoleIndex] = useState(0)
+  const [displayText, setDisplayText] = useState('')
+  const [isDeleting, setIsDeleting] = useState(false)
+  const [charIndex, setCharIndex] = useState(0)
+
+  useEffect(() => {
+    const fullText = roles[currentRoleIndex]
+    const speed = isDeleting ? 40 : 80
+
+    const timer = setTimeout(() => {
+      if (!isDeleting) {
+        setDisplayText(fullText.substring(0, charIndex + 1))
+        setCharIndex(prev => prev + 1)
+        if (charIndex + 1 === fullText.length) {
+          setTimeout(() => setIsDeleting(true), 1600)
+        }
+      } else {
+        setDisplayText(fullText.substring(0, charIndex - 1))
+        setCharIndex(prev => prev - 1)
+        if (charIndex - 1 === 0) {
+          setIsDeleting(false)
+          setCurrentRoleIndex(prev => (prev + 1) % roles.length)
+        }
+      }
+    }, speed)
+
+    return () => clearTimeout(timer)
+  }, [charIndex, isDeleting, currentRoleIndex])
+
   const stats = [
+    { label: 'Current Role', value: 'VillagKart' },
     { label: 'Projects Built', value: '15+' },
     { label: 'GitHub Commits', value: '300+' },
-    { label: 'Technologies', value: '12+' },
-    { label: 'Internships', value: '2+' },
-    { label: 'Hours of Coding', value: '1000+' }
+    { label: 'Technologies', value: '15+' },
+    { label: 'Industry Experience', value: '3 Roles' }
   ]
 
   return (
@@ -43,7 +80,7 @@ export default function Hero() {
           >
             <div className="hero-badge">
               <span className="badge-dot" style={{ backgroundColor: '#10b981', boxShadow: '0 0 10px #10b981' }}></span>
-              Open to Full-Time Software Engineer Opportunities
+              Junior Software Engineer @ VillagKart | AI & MERN Specialist
             </div>
 
             <h1 className="hero-name">
@@ -51,15 +88,25 @@ export default function Hero() {
             </h1>
 
             <div className="hero-role">
-              Full Stack MERN Developer
+              <span className="gradient-text" style={{ minHeight: '1.4em', display: 'inline-block' }}>
+                {displayText}
+              </span>
+              <span className="cursor" style={{ marginLeft: '4px', opacity: 0.8, color: 'var(--accent-blue)' }}>|</span>
             </div>
 
             <p className="hero-description">
-              Building scalable web applications, AI-powered solutions, and SaaS products using React, Node.js, Express, MongoDB, PostgreSQL, Prisma, and modern cloud technologies.
+              Junior Software Engineer at VillagKart Private Limited. Experienced in building scalable full-stack web applications, robust Python backend services, and AI-powered systems with React, Node.js, Express, MongoDB, and modern cloud technologies.
             </p>
 
             <div className="hero-buttons">
-              <a href="https://docs.google.com/document/d/1P3p2vob5N3YZKAMxI67dW5CucgfgjV52/edit?usp=sharing&ouid=109640405793276953041&rtpof=true&sd=true" target="_blank" rel="noreferrer" className="btn-primary" id="hero-resume">
+              <a 
+                href="/resume.pdf" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                download="Panga_Naresh_Resume.pdf" 
+                className="btn-primary" 
+                id="hero-resume"
+              >
                 <Download size={18} />
                 Download Resume
               </a>
@@ -70,13 +117,13 @@ export default function Hero() {
             </div>
 
             <div className="hero-socials">
-              <a href="https://github.com/nareshyadav20" target="_blank" rel="noreferrer" className="social-link" id="hero-github">
+              <a href="https://github.com/nareshyadav20" target="_blank" rel="noopener noreferrer" className="social-link" id="hero-github" aria-label="GitHub Profile">
                 <Github size={20} />
               </a>
-              <a href="https://linkedin.com/in/naresh-yadav-panga" target="_blank" rel="noreferrer" className="social-link" id="hero-linkedin">
+              <a href="https://www.linkedin.com/in/naresh-yadav-/" target="_blank" rel="noopener noreferrer" className="social-link" id="hero-linkedin" aria-label="LinkedIn Profile">
                 <Linkedin size={20} />
               </a>
-              <a href="https://portfolio-swart-five-6qy38zwrqn.vercel.app/" target="_blank" rel="noreferrer" className="social-link" id="hero-website">
+              <a href="https://portfolio-swart-five-6qy38zwrqn.vercel.app/" target="_blank" rel="noopener noreferrer" className="social-link" id="hero-website" aria-label="Portfolio Website">
                 <ExternalLink size={20} />
               </a>
             </div>
@@ -95,7 +142,7 @@ export default function Hero() {
               <div className="hero-image-wrapper">
                 <img
                   src="/naresh.jpg"
-                  alt="Naresh Yadav - Full Stack Developer"
+                  alt="Naresh Yadav - Full Stack & Python Developer"
                   className="hero-photo"
                   id="hero-photo"
                   onError={(e) => {
@@ -114,21 +161,21 @@ export default function Hero() {
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               >
-                <span>⚛️</span> React.js
+                <span>🐍</span> Python
               </motion.div>
               <motion.div 
                 className="float-badge float-badge-2"
                 animate={{ y: [0, -15, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
               >
-                <span>⚡</span> Node.js
+                <span>⚛️</span> MERN Stack
               </motion.div>
               <motion.div 
                 className="float-badge float-badge-3"
                 animate={{ y: [0, -12, 0] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
               >
-                <span>🍃</span> MongoDB
+                <span>🤖</span> AI / LLM
               </motion.div>
             </div>
           </motion.div>

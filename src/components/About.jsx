@@ -4,10 +4,10 @@ import './About.css'
 
 export default function About() {
   const highlights = [
-    { icon: <Code2 size={24} color="var(--accent-blue)" />, title: 'Frontend', desc: 'React, Next.js, TypeScript' },
-    { icon: <Server size={24} color="var(--accent-purple)" />, title: 'Backend', desc: 'Node.js, Express, Socket.io' },
-    { icon: <Database size={24} color="var(--accent-cyan)" />, title: 'Database', desc: 'MongoDB, PostgreSQL, Prisma' },
-    { icon: <Cloud size={24} color="var(--accent-green)" />, title: 'Cloud & AI', desc: 'Vercel, AI Integrations' },
+    { icon: <Code2 size={24} color="var(--accent-blue)" />, title: 'Frontend', desc: 'React.js, JavaScript, Tailwind' },
+    { icon: <Server size={24} color="var(--accent-purple)" />, title: 'Backend & Python', desc: 'Node.js, Express.js, Python, REST APIs' },
+    { icon: <Database size={24} color="var(--accent-cyan)" />, title: 'Databases', desc: 'MongoDB, PostgreSQL, MySQL' },
+    { icon: <Cloud size={24} color="var(--accent-green)" />, title: 'AI & Cloud', desc: 'Ollama LLMs, Sarvam AI, NLP, Vercel' },
   ]
 
   return (
@@ -29,11 +29,10 @@ export default function About() {
             <div className="glass-card about-text-card">
               <h3 className="about-subtitle">Professional Summary</h3>
               <p className="about-text">
-                I'm a <strong>Full Stack MERN Developer</strong> specializing in React, Node.js, Express, MongoDB, PostgreSQL, Prisma, and AI integrations. 
-                I enjoy building scalable applications that solve real-world problems, with experience in SaaS architecture, role-based authentication, real-time systems, and cloud deployment.
+                I'm a <strong>Junior Software Engineer at VillagKart Private Limited</strong> (Product & Technology) with a strong <strong>Full-Stack MERN</strong> foundation (React.js, Node.js, Express.js, MongoDB), <strong>Python development</strong> experience, and 6+ months of prior industry experience as an AI Programmer Intern.
               </p>
               <p className="about-text" style={{ marginTop: '16px' }}>
-                My passion lies in architecting intelligent, high-performance systems. Currently seeking <strong>Software Engineer opportunities</strong> where I can contribute to impactful projects, solve complex engineering challenges, and continue growing as a developer.
+                Experienced in REST API design, JWT-based authentication, role-based access control, and deploying production full-stack apps. Passionate about AI application development including <strong>LLM integration (Ollama)</strong>, <strong>voice-enabled chatbots (Sarvam AI)</strong>, and <strong>NLP text classification</strong>.
               </p>
             </div>
           </motion.div>
